@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: url('image.png') no-repeat;
+    background-size: cover;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color: beige;
+    user-select: none;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: beige;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: black;
+}
+
+.navigation a::after {
+  content:'';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: black;
+  border-radius: 5px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+
+.navigation a:hover::after{
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.form-box {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    background: transparent;
+    border: 2px solid rgba(255, 255 ,255 , .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin: 100px auto;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: beige;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.input-box input,
+/* .input-box select {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: beige ;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+    border-bottom: 2px solid beige;
+} */
+
+/*  .input-box select[name="photography_service"] {
+    color: black; Change this to the desired color 
+
+} */
+
+.input-box select {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: beige;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+    border-bottom: 2px solid beige;
+    /* Add the following lines */
+    appearance: none; /* Hides the default arrow */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+}
+
+
+
+.input-box select option {
+    /* Set the color of the options */
+    color: black; /* Change this to the desired text color */
+}
+
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: beige;
+    line-height: 57px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px ;
+    transform: translateY(-50);
+    font-size: 1em;
+    color: beige;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box select:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label,
+.input-box select:not(:placeholder-shown) ~ label {
+    top: -10px;
+    font-size: 0.9em;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    /* background:saddlebrown; */
+    /* border: saddlebrown; */
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    /* color: beige; */
+    font-weight: 500;
+    margin-top: 20px;
+    background: transparent;
+    border: 2px solid beige;
+    outline: none;
+    border-radius: 6px;
+    /* cursor: pointer; */
+    font-size: 1.1em;
+    color: beige;
+    transition: .5s;
+}
+
+.btn:hover {
+    background: beige;
+    color: black;
+}
+
+footer {
+    padding: 20px 100px;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    color:beige;
+}

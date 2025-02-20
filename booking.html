@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website With Login & Registration | Madygascar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h2 class="logo">CreativeTribe</h2>
+        <nav class="navigation">
+            <a href="home.html">Home</a>
+        </nav>
+    </header>
+
+    <div class="form-box booking">
+        <h2>Booking</h2>
+        <form action="booking.php" method="post">
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                <input type="text" name="name" required>
+                <label>Name</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                <input type="email" name="email" required>
+                <label>Email</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                <input type="tel" name="contact_number" required>
+                <label>Contact Number</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                <input type="date" name="date_of_appointment" required>
+                <label>Date of Appointment</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                <select name="photography_service" required>
+                    <option value="" disabled selected>Select Photography Service</option>
+                    <option value="portrait">Portrait</option>
+                    <option value="landscape">Landscape</option>
+                    <option value="wedding">Wedding</option>
+                </select>
+            </div>
+            <button type="submit" class="btn">Book Appointment</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        function loginUser() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Retrieve registered users from local storage or database
+            var registeredUsers = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Check if the entered credentials match any registered user
+            var user = registeredUsers.find(function(user) {
+                return user.username === username && user.password === password;
+            });
+
+            if (user) {
+                alert('Login successful! Redirecting to home page...');
+                window.location.href = 'booking.html'; // Redirect to home page
+            } else {
+                alert('Invalid username or password. Please try again.'); // Show error message
+            }
+        }
+    </script>
+     <footer>
+      <p>&copy; 2024 CreativeTribe. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
